@@ -4,705 +4,311 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivek Kumar | Still Curious</title>
-
-    <meta name="description"
-          content="The story of curiosity, servers, startups, networking, security, cloud infrastructure and sleepless nights.">
-
+    <meta name="description" content="A cinematic story about curiosity, servers, security, failures, and the problems that keep Vivek Kumar awake at 3 AM.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <a class="skip-link" href="#intro">Skip to story</a>
 
-<!-- ===================================================== -->
-<!-- NAVIGATION -->
-<!-- ===================================================== -->
+    <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="#intro" aria-label="Vivek Kumar home">VK</a>
+        <nav class="chapter-nav" aria-label="Story chapters">
+            <a href="#intro">Start</a>
+            <a href="#slide-8">Datacenter</a>
+            <a href="#slide-13">Problem</a>
+            <a href="#slide-21">Laptop</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="progress-label" aria-hidden="true">
+            <span id="current-slide">01</span>
+            <span>/</span>
+            <span id="total-slides">25</span>
+        </div>
+    </header>
 
-<nav class="navbar">
-
-    <div class="logo">
-        VK
+    <div class="scroll-progress" aria-hidden="true">
+        <span></span>
     </div>
 
-    <div class="nav-links">
-        <a href="#story">Story</a>
-        <a href="#projects">Projects</a>
-        <a href="#mindset">Mindset</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-</nav>
-
-<!-- ===================================================== -->
-<!-- HERO -->
-<!-- ===================================================== -->
-
-<section id="hero">
-
-    <div class="hero-content">
-
-        <div class="terminal">
-            vivek@life:~$ whoami
-        </div>
-
-        <h1>
-            I found a chapter about HTML
-            in a school textbook.
-        </h1>
-
-        <p class="hero-text">
-            That single chapter started a journey through websites,
-            servers, networking, cloud infrastructure,
-            security, startups, failures and sleepless nights.
-        </p>
-
-        <p class="hero-question">
-            Ten years later,
-            I'm still trying to answer the same question:
-        </p>
-
-        <h2>
-            How does this actually work?
-        </h2>
-
-        <a href="#story" class="hero-btn">
-            Read My Story
-        </a>
-
-    </div>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- INTRO -->
-<!-- ===================================================== -->
-
-<section id="story">
-
-    <div class="section-intro">
-
-        <span>MY JOURNEY</span>
-
-        <h2>
-            This isn't a portfolio.
-        </h2>
-
-        <p>
-            It's a collection of experiments,
-            failures, late nights and curiosity.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 1 -->
-<!-- ===================================================== -->
-
-<section class="chapter">
-
-    <span class="chapter-year">2017</span>
-
-    <h2>
-        The HTML Chapter
-    </h2>
-
-    <p>
-        Class 7.
-    </p>
-
-    <p>
-        A chapter about HTML appeared in my school textbook.
-    </p>
-
-    <p>
-        Most students moved on after finishing the lesson.
-    </p>
-
-    <p>
-        I couldn't stop thinking about it.
-    </p>
-
-    <p>
-        The idea that anyone could create a webpage
-        and make it accessible to the world felt unreal.
-    </p>
-
-    <p>
-        Internet was expensive.
-        Resources were limited.
-    </p>
-
-    <p>
-        Curiosity wasn't.
-    </p>
-
-    <p>
-        I found 000webhost.
-    </p>
-
-    <p>
-        Then I found free .tk domains.
-    </p>
-
-    <p>
-        I still didn't understand domains,
-        hosting, DNS or servers.
-    </p>
-
-    <p>
-        I just wanted to know more.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 2 -->
-<!-- ===================================================== -->
-
-<section class="chapter">
-
-    <span class="chapter-year">2018</span>
-
-    <h2>
-        Learning Through Confusion
-    </h2>
-
-    <p>
-        Website builders were becoming popular.
-    </p>
-
-    <p>
-        Click a few buttons.
-        Get a website.
-    </p>
-
-    <p>
-        I wanted to understand what happened behind those buttons.
-    </p>
-
-    <p>
-        So I started learning PHP.
-    </p>
-
-    <p>
-        Most tutorials made absolutely no sense.
-    </p>
-
-    <p>
-        I copied code.
-        Broke things.
-        Fixed things.
-        Broke them again.
-    </p>
-
-    <p>
-        Eventually something worked.
-    </p>
-
-    <blockquote>
-        I wasn't learning because I understood.
-        I understood because I kept building.
-    </blockquote>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 3 -->
-<!-- ===================================================== -->
-
-<section class="chapter">
-
-    <span class="chapter-year">2019</span>
-
-    <h2>
-        Hardware Changes Everything
-    </h2>
-
-    <p>
-        Websites weren't enough anymore.
-    </p>
-
-    <p>
-        I wanted to touch the systems I was building.
-    </p>
-
-    <p>
-        Arduino opened an entirely new world.
-    </p>
-
-    <p>
-        Sensors.
-        Breadboards.
-        Experiments.
-        Endless curiosity.
-    </p>
-
-    <p>
-        Every project answered one question
-        and created ten more.
-    </p>
-
-    <p>
-        Eventually I joined Diploma in Computer Science Engineering.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 4 -->
-<!-- ===================================================== -->
-
-<section class="chapter featured">
-
-    <span class="chapter-year">2020</span>
-
-    <h2>
-        The Covid Years
-    </h2>
-
-    <p>
-        Then Covid happened.
-    </p>
-
-    <p>
-        The world slowed down.
-    </p>
-
-    <p>
-        My learning accelerated.
-    </p>
-
-    <p>
-        Google Cloud.
-        Virtual Machines.
-        Linux.
-        Networking.
-        Hosting.
-        Security.
-    </p>
-
-    <p>
-        I convinced my family to get a BSNL connection
-        with a static IP.
-    </p>
-
-    <p>
-        My dream was simple:
-    </p>
-
-    <blockquote>
-        Build a hosting company from my bedroom.
-    </blockquote>
-
-    <p>
-        I opened ports.
-        Hosted websites.
-        Ran mail servers.
-        Broke things.
-        Fixed things.
-    </p>
-
-    <p>
-        Networking stopped being theory.
-    </p>
-
-    <p>
-        I could see packets moving.
-        Requests arriving.
-        Systems communicating.
-    </p>
-
-    <p>
-        My bedroom slowly turned into a datacenter.
-    </p>
-
-    <p>
-        Then the CPU overheated and died.
-    </p>
-
-    <p>
-        Weeks of work disappeared.
-    </p>
-
-    <p>
-        Failure taught me more than success.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 5 -->
-<!-- ===================================================== -->
-
-<section class="chapter">
-
-    <span class="chapter-year">2020-2021</span>
-
-    <h2>
-        Curiosity Goes Deeper
-    </h2>
-
-    <p>
-        Somewhere during Covid,
-        the questions changed.
-    </p>
-
-    <p>
-        I stopped asking:
-    </p>
-
-    <blockquote>
-        How do I use this?
-    </blockquote>
-
-    <p>
-        And started asking:
-    </p>
-
-    <blockquote>
-        How does this work underneath?
-    </blockquote>
-
-    <p>
-        APIs.
-        Network traffic.
-        Authentication.
-        Security.
-        Reverse engineering.
-        Automation.
-    </p>
-
-    <p>
-        Every answer revealed another layer.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 6 -->
-<!-- ===================================================== -->
-
-<section class="chapter featured">
-
-    <span class="chapter-year">2021</span>
-
-    <h2>
-        The Problem That Refused To Die
-    </h2>
-
-    <p>
-        A senior and I got an opportunity
-        to build a Webflow website exporter.
-    </p>
-
-    <p>
-        It sounded simple.
-    </p>
-
-    <p>
-        Export HTML.
-        Export CSS.
-        Export images.
-    </p>
-
-    <p>
-        Done.
-    </p>
-
-    <p>
-        Except it wasn't.
-    </p>
-
-    <p>
-        Links broke.
-        Assets disappeared.
-        Forms stopped working.
-    </p>
-
-    <p>
-        The challenge wasn't coding.
-    </p>
-
-    <p>
-        The challenge was understanding
-        how Webflow itself worked.
-    </p>
-
-    <p>
-        Three nights.
-        Almost no sleep.
-    </p>
-
-    <p>
-        One day I couldn't even stand properly.
-    </p>
-
-    <p>
-        After recovering,
-        I came back immediately.
-    </p>
-
-    <blockquote>
-        When a problem is alive,
-        I can't sleep.
-    </blockquote>
-
-    <p>
-        Eventually it worked.
-    </p>
-
-    <p>
-        The project became funded by a German agency.
-    </p>
-
-    <p>
-        More than €5000 was earned and split among three people.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 7 -->
-<!-- ===================================================== -->
-
-<section class="chapter">
-
-    <span class="chapter-year">2022</span>
-
-    <h2>
-        Teaching & Graduation
-    </h2>
-
-    <p>
-        An IoT instructor needed a website.
-    </p>
-
-    <p>
-        We built it.
-    </p>
-
-    <p>
-        Then he asked me to teach graduates C programming.
-    </p>
-
-    <p>
-        Four days.
-        ₹32,000.
-    </p>
-
-    <p>
-        The same year,
-        I started my Bachelor's in Computer Science Engineering.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CHAPTER 8 -->
-<!-- ===================================================== -->
-
-<section class="chapter">
-
-    <span class="chapter-year">2024-2025</span>
-
-    <h2>
-        The Confidence Gap
-    </h2>
-
-    <p>
-        By the final year,
-        I felt like I knew nothing.
-    </p>
-
-    <p>
-        Years of learning.
-        Years of building.
-    </p>
-
-    <p>
-        Yet somehow everyone else looked more qualified.
-    </p>
-
-    <p>
-        Looking back,
-        it wasn't a skill problem.
-    </p>
-
-    <p>
-        It was a confidence problem.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- NANDGATE -->
-<!-- ===================================================== -->
-
-<section class="chapter featured">
-
-    <span class="chapter-year">2025</span>
-
-    <h2>
-        NandGate
-    </h2>
-
-    <p>
-        After graduation,
-        curiosity helped again.
-    </p>
-
-    <p>
-        A security finding led to conversations.
-    </p>
-
-    <p>
-        Those conversations led to projects.
-    </p>
-
-    <p>
-        Those projects led to NandGate.
-    </p>
-
-    <p>
-        Once again,
-        I was getting paid to solve problems.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- MINDSET -->
-<!-- ===================================================== -->
-
-<section id="mindset">
-
-    <h2>
-        What Drives Me
-    </h2>
-
-    <div class="mindset-grid">
-
-        <div class="mindset-card">
-            Curiosity
-        </div>
-
-        <div class="mindset-card">
-            Reverse Engineering
-        </div>
-
-        <div class="mindset-card">
-            Systems Thinking
-        </div>
-
-        <div class="mindset-card">
-            Hard Problems
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- FINAL -->
-<!-- ===================================================== -->
-
-<section id="final-message">
-
-    <h2>
-        I'm not looking for a job.
-    </h2>
-
-    <h1>
-        I'm looking for the feeling.
-    </h1>
-
-    <p>
-        The feeling of staring at a problem
-        at 3 AM.
-    </p>
-
-    <p>
-        The feeling of having absolutely no idea
-        how something works.
-    </p>
-
-    <p>
-        The feeling of finally making it work
-        after days of failure.
-    </p>
-
-    <blockquote>
-        I don't miss the money.
-        I miss those nights.
-    </blockquote>
-
-    <p>
-        And I'm looking for them again.
-    </p>
-
-</section>
-
-<!-- ===================================================== -->
-<!-- CONTACT -->
-<!-- ===================================================== -->
-
-<section id="contact">
-
-    <div class="contact-content">
-
-        <span>CONTACT</span>
-
-        <h2>
-            Let's Connect
-        </h2>
-
-        <p>
-            If you want to talk about systems, security,
-            infrastructure, startups or hard problems,
-            you can reach me here.
-        </p>
-
-        <div class="contact-grid">
-
-            <a class="contact-card" href="mailto:vivek12345ara@gmail.com">
-                <span>Email</span>
-                vivek12345ara@gmail.com
-            </a>
-
-            <a class="contact-card" href="tel:+919304982963">
-                <span>Contact Number</span>
-                9304982963
-            </a>
-
-            <a class="contact-card" href="https://www.linkedin.com/in/tiwari-vivek-kumar/" target="_blank" rel="noopener noreferrer">
-                <span>LinkedIn</span>
-                linkedin.com/in/tiwari-vivek-kumar
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-
-    <h3>
-        Still Building.
-        Still Learning.
-        Still Curious.
-    </h3>
-
-    <p>
-        vivek@life:~$
-    </p>
-
-</footer>
-
-<script src="script.js"></script>
-
+    <main class="story" aria-label="Vivek Kumar story">
+        <section class="story-slide intro-slide align-center" id="intro">
+            <div class="slide-bg final-bg"></div>
+            <div class="slide-inner compact">
+                <p class="eyebrow">Vivek Kumar / Still Curious</p>
+                <h1>This is not a resume.</h1>
+                <p class="lede">I am a Computer Science graduate from Lovely Professional University, shaped by a Diploma in CSE from 2019 to 2022, and years of building things before I fully understood them.</p>
+                <div class="intro-facts" aria-label="Education">
+                    <span>Diploma in CSE</span>
+                    <span>2019-2022</span>
+                    <span>LPU CSE Graduate</span>
+                    <span>2022-2025</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-slide paper-slide align-center" id="slide-1" data-theme="paper">
+            <div class="slide-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">Class 7. A textbook. One page.</p>
+                <h1>I found a chapter about HTML in a school textbook.</h1>
+                <p class="lede">It was the first time I heard the word webpage. I did not know what it meant, but I could not stop thinking about it.</p>
+            </div>
+        </section>
+
+        <section class="story-slide split-slide" id="slide-2">
+            <div class="slide-bg glow-left"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">000webhost / .tk / first website</p>
+                <h2>I did not understand domains.<br>So I bought one.</h2>
+                <p class="support">Internet prices were high. I found 000webhost, hosted a site, then discovered free .tk domains. The words were confusing. The feeling was clear.</p>
+            </div>
+        </section>
+
+        <section class="story-slide code-slide" id="slide-3">
+            <div class="slide-bg grid-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">PHP / MySQL / servers</p>
+                <h2>Website builders were everywhere.<br>I wanted to build one myself.</h2>
+                <div class="mono-stack" aria-label="Technologies">
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>Dynamic content</span>
+                    <span>YouTube tutorials</span>
+                </div>
+                <p class="support">I failed because I did not understand what I was connecting, or why. Then slowly, something worked.</p>
+            </div>
+        </section>
+
+        <section class="story-slide hardware-slide" id="slide-4">
+            <div class="slide-bg circuit-bg"></div>
+            <div class="slide-inner narrow">
+                <p class="eyebrow">2019 / Arduino / tinkering</p>
+                <h2>Then Arduino entered my life.</h2>
+                <p class="support">Sensors. Breadboards. Small projects for personal problems. The screen was no longer enough; I wanted to touch the systems I was building.</p>
+            </div>
+        </section>
+
+        <section class="story-slide dramatic-slide" id="slide-5">
+            <div class="slide-bg dim-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">Diploma in CSE</p>
+                <h2>I chose the branch that matched my curiosity.</h2>
+                <p class="large-line">In the first year, I found hacking, systems, and the thrill of understanding what was hidden underneath.</p>
+            </div>
+        </section>
+
+        <section class="story-slide dramatic-slide" id="slide-6">
+            <div class="slide-bg dim-bg"></div>
+            <div class="slide-inner">
+                <h2>Then Covid happened.</h2>
+                <p class="large-line">The world stopped.</p>
+                <p class="large-line accent-line">My learning accelerated.</p>
+            </div>
+        </section>
+
+        <section class="story-slide words-slide" id="slide-7">
+            <div class="slide-bg grid-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">First real security lesson</p>
+                <h2>I learned what access really means.</h2>
+                <p class="support">During Covid, I discovered serious weaknesses in a board website and saw how a small mistake could expose a much larger system. I tried to find the right person to report it to, but never found a clear channel. That moment changed how I looked at security.</p>
+            </div>
+        </section>
+
+        <section class="story-slide datacenter-slide" id="slide-8">
+            <div class="slide-bg server-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">Static IP / BSNL / port forwarding / SMTP / hosting</p>
+                <h2>My bedroom became a datacenter.</h2>
+                <p class="support">I took a BSNL connection with a static IP, coordinated to open ports 80, 443, and SMTP, and started hosting from home. Networking stopped being theory.</p>
+            </div>
+        </section>
+
+        <section class="story-slide failure-slide" id="slide-9">
+            <div class="slide-bg hot-bg"></div>
+            <div class="slide-inner">
+                <h2>I wanted to build a hosting company from my bedroom.</h2>
+                <p class="reveal-line">The CPU overheated.</p>
+                <p class="support">So I started again with Raspberry Pi, hosting, protocols, and live traffic. Failure did not stop the experiment. It made it sharper.</p>
+            </div>
+        </section>
+
+        <section class="story-slide transformation-slide" id="slide-10">
+            <div class="slide-bg"></div>
+            <div class="slide-inner">
+                <p class="quote-small">I stopped asking</p>
+                <h2>&ldquo;How do I use this?&rdquo;</h2>
+                <p class="quote-small">and started asking</p>
+                <h2 class="accent-text">&ldquo;How does this work?&rdquo;</h2>
+            </div>
+        </section>
+
+        <section class="story-slide words-slide" id="slide-11">
+            <div class="slide-bg grid-bg"></div>
+            <div class="word-field" aria-label="Curiosity topics">
+                <span>Security</span>
+                <span>Networking</span>
+                <span>APIs</span>
+                <span>Reverse Engineering</span>
+            </div>
+        </section>
+
+        <section class="story-slide code-slide" id="slide-12">
+            <div class="slide-bg grid-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">Tools for strange problems</p>
+                <h2>If a problem annoyed me, I built something for it.</h2>
+                <p class="support">Command-line helpers, traffic experiments, API automation, replicated network requests, and small local agents. The deeper I went, the more I learned that curiosity needs judgment.</p>
+            </div>
+        </section>
+
+        <section class="story-slide project-slide" id="slide-13">
+            <div class="slide-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">German project</p>
+                <h2>A senior and I delivered a Webflow exporter.</h2>
+                <ul class="story-list">
+                    <li>Links broke.</li>
+                    <li>Assets disappeared.</li>
+                    <li>Forms stopped working.</li>
+                    <li>A small task became a funded project.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="story-slide quote-slide" id="slide-14">
+            <div class="slide-inner">
+                <blockquote>When a problem is alive,<br>I can&rsquo;t sleep.</blockquote>
+            </div>
+        </section>
+
+        <section class="story-slide money-slide" id="slide-15">
+            <div class="slide-bg"></div>
+            <div class="slide-inner">
+                <h2 class="number">&euro;5000+</h2>
+                <p class="large-line">Split between three people.</p>
+                <p class="large-line accent-line">And most of it went back into more experiments.</p>
+            </div>
+        </section>
+
+        <section class="story-slide teaching-slide" id="slide-16">
+            <div class="slide-bg glow-right"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">College reopened / IoT instructor / Teaching C</p>
+                <h2>Four days.<br>&#8377;32,000.</h2>
+                <p class="support">An IoT instructor asked for a company website. We delivered. Then he hired me to train graduates in C. I learned fast, taught faster, and walked out believing again.</p>
+            </div>
+        </section>
+
+        <section class="story-slide graduation-slide" id="slide-17">
+            <div class="slide-bg paper-dark"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">Diploma finished / LPU / CSE</p>
+                <h2>Then graduation started.</h2>
+                <p class="support">A new campus. A bigger room. More learning. More comparison. The same curiosity following me everywhere.</p>
+            </div>
+        </section>
+
+        <section class="story-slide confidence-slide" id="slide-18">
+            <div class="slide-bg void-bg"></div>
+            <div class="slide-inner narrow">
+                <p class="eyebrow">Fourth year / the confidence gap</p>
+                <h2>I felt like I knew nothing.</h2>
+                <p class="support">I did not even dare to sit for interviews. No job came. The skill was there, but the confidence was missing.</p>
+            </div>
+        </section>
+
+        <section class="story-slide nandgate-slide" id="slide-19">
+            <div class="slide-bg glow-left"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">After graduation / USA client</p>
+                <h2>A leaked credential opened a new door.</h2>
+                <p class="support">While exploring, I found exposed credentials on a website and reported the issue. That led to a person from the USA, testing work, bug hunting, and my first steady $600/month remote opportunity.</p>
+            </div>
+        </section>
+
+        <section class="story-slide nandgate-slide" id="slide-20">
+            <div class="slide-bg glow-right"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">NandGate</p>
+                <h2>Then silence.<br>Then another project.</h2>
+                <p class="support">After three quiet months, work started again. This time it became a proper role through NandGate, building and testing a real project until it ended three months later.</p>
+            </div>
+        </section>
+
+        <section class="story-slide laptop-slide" id="slide-21">
+            <div class="slide-bg laptop-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">My laptop</p>
+                <h2>For most people, it is a laptop.</h2>
+                <div class="memory-grid">
+                    <span>My first website</span>
+                    <span>My first server</span>
+                    <span>My first project</span>
+                    <span>My first client</span>
+                    <span>My first euro</span>
+                    <span>My first security finding</span>
+                    <span>My first remote client</span>
+                    <span>My first monthly dollar income</span>
+                    <span>Thousands of experiments</span>
+                    <span>Thousands of failures</span>
+                </div>
+                <p class="closing-line">For me, it is where curiosity lives.</p>
+            </div>
+        </section>
+
+        <section class="story-slide realization-slide" id="slide-22">
+            <div class="slide-bg"></div>
+            <div class="slide-inner">
+                <h2>I was not in love with websites.</h2>
+                <p class="large-line">I was not in love with servers.</p>
+                <p class="large-line">I was not in love with cloud.</p>
+                <p class="large-line accent-line">I was in love with understanding.</p>
+            </div>
+        </section>
+
+        <section class="story-slide realization-slide" id="slide-23">
+            <div class="slide-bg final-bg"></div>
+            <div class="slide-inner">
+                <p class="eyebrow">What I am searching for now</p>
+                <h2>Somewhere skills matter.</h2>
+                <p class="large-line">Challenges are real.</p>
+                <p class="large-line">Contributions matter.</p>
+                <p class="large-line accent-line">And curiosity is not treated like a distraction.</p>
+            </div>
+        </section>
+
+        <section class="story-slide final-slide" id="contact">
+            <div class="slide-bg final-bg"></div>
+            <div class="slide-inner">
+                <h2>I&rsquo;m not looking for a job.</h2>
+                <h3>I&rsquo;m looking for the next problem that keeps me awake at 3 AM.</h3>
+                <p class="final-mantra">Still Curious. Still Building. Still Learning.</p>
+                <div class="contact-links" aria-label="Contact links">
+                    <a href="mailto:vivek12345ara@gmail.com">
+                        <span>Email</span>
+                        vivek12345ara@gmail.com
+                    </a>
+                    <a href="https://github.com/vivek12345ara" target="_blank" rel="noopener noreferrer">
+                        <span>GitHub</span>
+                        github.com/vivek12345ara
+                    </a>
+                    <a href="https://www.linkedin.com/in/tiwari-vivek-kumar/" target="_blank" rel="noopener noreferrer">
+                        <span>LinkedIn</span>
+                        tiwari-vivek-kumar
+                    </a>
+                    <a href="resume.pdf" download>
+                        <span>Resume</span>
+                        Download PDF
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,579 +1,118 @@
-/* ==========================================
-   VIVEK JOURNEY WEBSITE
-   script.js
-========================================== */
+const slides = Array.from(document.querySelectorAll(".story-slide"));
+const navLinks = Array.from(document.querySelectorAll(".chapter-nav a"));
+const progressBar = document.querySelector(".scroll-progress span");
+const currentSlide = document.getElementById("current-slide");
+const totalSlides = document.getElementById("total-slides");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+function formatSlideNumber(index) {
+    return String(index + 1).padStart(2, "0");
+}
 
-/* ==========================================
-   SCROLL REVEAL ANIMATION
-========================================== */
+function setActiveSlide(slide) {
+    const index = slides.indexOf(slide);
 
-const revealElements = document.querySelectorAll(
-    ".chapter, .mindset-card, .contact-card"
-);
+    if (index === -1) {
+        return;
+    }
 
-const revealObserver = new IntersectionObserver(
+    if (currentSlide) {
+        currentSlide.textContent = formatSlideNumber(index);
+    }
+
+    navLinks.forEach((link) => {
+        const targetId = link.getAttribute("href").replace("#", "");
+        const isActive = targetId === slide.id;
+        link.classList.toggle("active", isActive);
+        link.setAttribute("aria-current", isActive ? "page" : "false");
+    });
+}
+
+if (totalSlides) {
+    totalSlides.textContent = String(slides.length).padStart(2, "0");
+}
+
+const slideObserver = new IntersectionObserver(
     (entries) => {
-
-        entries.forEach(entry => {
-
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
+                entry.target.classList.add("is-visible");
+                setActiveSlide(entry.target);
             }
-
         });
-
     },
     {
-        threshold: 0.15
+        threshold: 0.58
     }
 );
 
-revealElements.forEach(element => {
-    revealObserver.observe(element);
+slides.forEach((slide) => {
+    slideObserver.observe(slide);
 });
 
+function updateProgress() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
 
-/* ==========================================
-   SMOOTH NAVIGATION
-========================================== */
+    if (progressBar) {
+        progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    }
+}
 
-document.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
+function updateParallax() {
+    if (reduceMotion) {
+        return;
+    }
 
-    anchor.addEventListener(
-        "click",
-        function(e){
+    const viewportHeight = window.innerHeight || 1;
 
-            e.preventDefault();
+    slides.forEach((slide) => {
+        const background = slide.querySelector(".slide-bg");
 
-            const target =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
-
-            if(target){
-
-                target.scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
-
-            }
-
-        }
-    );
-
-});
-
-
-/* ==========================================
-   ACTIVE NAVBAR HIGHLIGHT
-========================================== */
-
-const navLinks =
-document.querySelectorAll(".nav-links a");
-
-const sections =
-document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop - 150;
-
-        if(
-            window.scrollY >= sectionTop
-        ){
-
-            currentSection =
-                section.getAttribute("id");
-
+        if (!background) {
+            return;
         }
 
+        const rect = slide.getBoundingClientRect();
+        const distanceFromCenter = rect.top + rect.height / 2 - viewportHeight / 2;
+        const offset = distanceFromCenter * -0.055;
+        background.style.setProperty("--parallax", `${offset}px`);
     });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        const href =
-            link.getAttribute("href")
-            .replace("#","");
-
-        if(href === currentSection){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* ==========================================
-   TERMINAL TYPING EFFECT
-========================================== */
-
-const terminalElement =
-document.querySelector(".terminal");
-
-if(terminalElement){
-
-    const commands = [
-
-        "whoami",
-
-        "cat story.txt",
-
-        "sudo learn_everything",
-
-        "ssh curiosity",
-
-        "build impossible",
-
-        "grep meaning life.log",
-
-        "explore --recursive",
-
-        "while(true){ learn(); }"
-
-    ];
-
-    let cmdIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typeCommand(){
-
-        const current =
-            commands[cmdIndex];
-
-        if(!deleting){
-
-            terminalElement.textContent =
-            "vivek@life:~$ " +
-            current.substring(
-                0,
-                charIndex + 1
-            );
-
-            charIndex++;
-
-            if(
-                charIndex === current.length
-            ){
-
-                deleting = true;
-
-                setTimeout(
-                    typeCommand,
-                    1500
-                );
-
-                return;
-            }
-
-        }else{
-
-            terminalElement.textContent =
-            "vivek@life:~$ " +
-            current.substring(
-                0,
-                charIndex - 1
-            );
-
-            charIndex--;
-
-            if(charIndex === 0){
-
-                deleting = false;
-
-                cmdIndex++;
-
-                if(
-                    cmdIndex >= commands.length
-                ){
-                    cmdIndex = 0;
-                }
-
-            }
-
-        }
-
-        setTimeout(
-            typeCommand,
-            deleting ? 35 : 70
-        );
-
-    }
-
-    typeCommand();
-
 }
 
-
-/* ==========================================
-   READING PROGRESS BAR
-========================================== */
-
-const progressBar =
-document.createElement("div");
-
-progressBar.id =
-"reading-progress";
-
-document.body.appendChild(
-    progressBar
-);
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const totalHeight =
-            document.documentElement.scrollHeight -
-            window.innerHeight;
-
-        const progress =
-            (window.scrollY / totalHeight)
-            * 100;
-
-        progressBar.style.width =
-            progress + "%";
-
-    }
-);
-
-
-/* ==========================================
-   PROGRESS BAR STYLE
-========================================== */
-
-const progressStyle =
-document.createElement("style");
-
-progressStyle.innerHTML = `
-
-#reading-progress{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    height:3px;
-
-    width:0%;
-
-    background:#00ff88;
-
-    z-index:99999;
-
-    box-shadow:
-    0 0 10px #00ff88,
-    0 0 25px #00ff88;
-
+function onScroll() {
+    updateProgress();
+    updateParallax();
 }
 
-.nav-links a.active{
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+        const target = document.querySelector(anchor.getAttribute("href"));
 
-    color:#00ff88;
-
-}
-
-`;
-
-document.head.appendChild(
-    progressStyle
-);
-
-
-/* ==========================================
-   HERO PARALLAX
-========================================== */
-
-const hero =
-document.getElementById("hero");
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const scrollY =
-            window.scrollY;
-
-        if(hero){
-
-            hero.style.transform =
-            `translateY(${scrollY * 0.05}px)`;
-
+        if (!target) {
+            return;
         }
 
-    }
-);
-
-
-/* ==========================================
-   CHAPTER HIGHLIGHT
-========================================== */
-
-const chapters =
-document.querySelectorAll(".chapter");
-
-const chapterObserver =
-new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-                entry.target.style.transition =
-                    "all 0.5s ease";
-
-                entry.target.style.transform =
-                    "translateY(0px)";
-
-            }
-
+        event.preventDefault();
+        target.scrollIntoView({
+            behavior: reduceMotion ? "auto" : "smooth",
+            block: "start"
         });
-
-    },
-
-    {
-        threshold:0.3
-    }
-
-);
-
-chapters.forEach(chapter => {
-
-    chapterObserver.observe(
-        chapter
-    );
-
+    });
 });
 
+window.addEventListener("scroll", onScroll, { passive: true });
+window.addEventListener("resize", onScroll);
 
-/* ==========================================
-   QUOTE GLOW EFFECT
-========================================== */
-
-const quotes =
-document.querySelectorAll(
-    "blockquote"
-);
-
-quotes.forEach(quote => {
-
-    quote.addEventListener(
-        "mouseenter",
-        () => {
-
-            quote.style.boxShadow =
-            "0 0 30px rgba(0,255,136,.2)";
-
-        }
-    );
-
-    quote.addEventListener(
-        "mouseleave",
-        () => {
-
-            quote.style.boxShadow =
-            "none";
-
-        }
-    );
-
-});
-
-
-/* ==========================================
-   FLOATING CURSOR GLOW
-========================================== */
-
-const glow =
-document.createElement("div");
-
-glow.id = "cursor-glow";
-
-document.body.appendChild(
-    glow
-);
-
-const glowStyle =
-document.createElement("style");
-
-glowStyle.innerHTML = `
-
-#cursor-glow{
-
-    position:fixed;
-
-    width:250px;
-    height:250px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(0,255,136,.12),
-        transparent 70%
-    );
-
-    pointer-events:none;
-
-    transform:
-    translate(-50%,-50%);
-
-    z-index:-1;
-
-}
-
-`;
-
-document.head.appendChild(
-    glowStyle
-);
-
-document.addEventListener(
-    "mousemove",
-    e => {
-
-        glow.style.left =
-            e.clientX + "px";
-
-        glow.style.top =
-            e.clientY + "px";
-
-    }
-);
-
-
-/* ==========================================
-   FOOTER TERMINAL STATUS
-========================================== */
-
-const footerText =
-document.querySelector(
-    "footer p"
-);
-
-if(footerText){
-
-    const statuses = [
-
-        "vivek@life:~$ learning",
-
-        "vivek@life:~$ building",
-
-        "vivek@life:~$ debugging",
-
-        "vivek@life:~$ exploring",
-
-        "vivek@life:~$ experimenting",
-
-        "vivek@life:~$ still curious",
-
-        "vivek@life:~$ solving problems",
-
-        "vivek@life:~$ never finished"
-
-    ];
-
-    setInterval(() => {
-
-        const randomStatus =
-
-            statuses[
-                Math.floor(
-                    Math.random() *
-                    statuses.length
-                )
-            ];
-
-        footerText.textContent =
-            randomStatus;
-
-    }, 3500);
-
-}
-
-
-/* ==========================================
-   CONSOLE MESSAGE
-========================================== */
+slides[0]?.classList.add("is-visible");
+setActiveSlide(slides[0]);
+onScroll();
 
 console.log(`
+Still curious.
+Still building.
+Still learning.
 
-=========================================
-
-Hi there.
-
-If you're reading this,
-you're probably curious too.
-
-That's how all of this started.
-
-One HTML chapter.
-One question.
-
-"How does this actually work?"
-
-Stay curious.
-
-- Vivek
-
-=========================================
-
+If you are reading the console,
+you already understand the story.
 `);
-
-
-/* ==========================================
-   EASTER EGG
-========================================== */
-
-let keySequence = "";
-
-document.addEventListener(
-    "keydown",
-    e => {
-
-        keySequence +=
-            e.key.toLowerCase();
-
-        if(
-            keySequence.includes(
-                "curious"
-            )
-        ){
-
-            alert(
-                "Curiosity built everything you see here."
-            );
-
-            keySequence = "";
-        }
-
-        if(
-            keySequence.length > 25
-        ){
-
-            keySequence =
-            keySequence.slice(-25);
-
-        }
-
-    }
-);
