@@ -1,0 +1,645 @@
+/* =====================================
+   VIVEK JOURNEY WEBSITE
+   style.css
+===================================== */
+
+:root{
+    --bg:#050505;
+    --surface:#0f0f0f;
+    --card:#141414;
+
+    --text:#ffffff;
+    --muted:#9d9d9d;
+
+    --accent:#00ff88;
+    --accent-dark:#00c96b;
+
+    --border:#1f1f1f;
+
+    --max-width:900px;
+}
+
+/* =====================================
+   RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+
+    font-family:'Inter',sans-serif;
+
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0b0b0b;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--accent);
+    border-radius:50px;
+}
+
+/* =====================================
+   LINKS
+===================================== */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.navbar{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:20px 50px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:1000;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(5,5,5,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+    font-weight:800;
+    color:var(--accent);
+
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:var(--muted);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+#hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:120px 30px;
+}
+
+.hero-content{
+    max-width:950px;
+}
+
+.terminal{
+    font-family:'JetBrains Mono', monospace;
+
+    color:var(--accent);
+
+    margin-bottom:25px;
+}
+
+#hero h1{
+    font-size:clamp(3rem,8vw,6rem);
+
+    line-height:1.1;
+
+    margin-bottom:30px;
+
+    font-weight:800;
+}
+
+.hero-text{
+    font-size:1.3rem;
+
+    color:var(--muted);
+
+    max-width:800px;
+
+    margin:auto;
+
+    margin-bottom:30px;
+}
+
+.hero-question{
+    color:var(--muted);
+
+    margin-bottom:15px;
+}
+
+#hero h2{
+    font-size:clamp(2rem,5vw,4rem);
+
+    color:var(--accent);
+
+    margin-bottom:40px;
+}
+
+.hero-btn{
+    display:inline-block;
+
+    padding:16px 34px;
+
+    background:var(--accent);
+
+    color:#000;
+
+    font-weight:700;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 30px rgba(0,255,136,.4);
+}
+
+/* =====================================
+   INTRO
+===================================== */
+
+.section-intro{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.section-intro span{
+    color:var(--accent);
+    letter-spacing:2px;
+}
+
+.section-intro h2{
+    font-size:3rem;
+    margin:20px 0;
+}
+
+.section-intro p{
+    color:var(--muted);
+    font-size:1.2rem;
+}
+
+/* =====================================
+   STORY SECTIONS
+===================================== */
+
+section{
+    padding:120px 30px;
+}
+
+.chapter{
+    max-width:var(--max-width);
+
+    margin:auto;
+
+    padding:120px 20px;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.chapter-year{
+    display:inline-block;
+
+    color:var(--accent);
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    letter-spacing:1px;
+}
+
+.chapter h2{
+    font-size:clamp(2rem,5vw,4rem);
+
+    margin-bottom:40px;
+
+    line-height:1.15;
+}
+
+.chapter p{
+    font-size:1.15rem;
+
+    margin-bottom:20px;
+
+    color:#e5e5e5;
+}
+
+.chapter h3{
+    margin:25px 0;
+
+    font-size:1.7rem;
+
+    color:var(--accent);
+}
+
+/* =====================================
+   FEATURED CHAPTERS
+===================================== */
+
+.featured{
+    position:relative;
+}
+
+.featured::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-50px;
+    top:0;
+    bottom:0;
+
+    width:4px;
+
+    background:var(--accent);
+
+    border-radius:10px;
+}
+
+/* =====================================
+   QUOTES
+===================================== */
+
+blockquote{
+
+    margin:40px 0;
+
+    padding:30px;
+
+    border-left:4px solid var(--accent);
+
+    background:rgba(0,255,136,.05);
+
+    border-radius:12px;
+
+    font-size:1.3rem;
+
+    color:var(--accent);
+
+    font-weight:500;
+}
+
+/* =====================================
+   MINDSET
+===================================== */
+
+#mindset{
+    max-width:1200px;
+    margin:auto;
+}
+
+#mindset h2{
+    text-align:center;
+
+    font-size:3rem;
+
+    margin-bottom:60px;
+}
+
+.mindset-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.mindset-card{
+
+    padding:40px;
+
+    text-align:center;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    transition:.3s;
+
+    font-size:1.2rem;
+}
+
+.mindset-card:hover{
+
+    border-color:var(--accent);
+
+    transform:translateY(-6px);
+}
+
+/* =====================================
+   FINAL SECTION
+===================================== */
+
+#final-message{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+#final-message h2{
+
+    color:var(--accent);
+
+    margin-bottom:20px;
+}
+
+#final-message h1{
+
+    font-size:clamp(2.5rem,7vw,5rem);
+
+    line-height:1.1;
+
+    margin-bottom:40px;
+}
+
+#final-message p{
+
+    font-size:1.2rem;
+
+    color:#ddd;
+
+    margin-bottom:20px;
+}
+
+/* =====================================
+   CONTACT
+===================================== */
+
+#contact{
+    max-width:1100px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.contact-content{
+    max-width:900px;
+
+    margin:auto;
+}
+
+.contact-content > span{
+    color:var(--accent);
+
+    letter-spacing:2px;
+
+    font-weight:700;
+}
+
+.contact-content h2{
+    font-size:clamp(2.5rem,6vw,4.5rem);
+
+    line-height:1.1;
+
+    margin:20px 0;
+}
+
+.contact-content p{
+    color:var(--muted);
+
+    font-size:1.15rem;
+
+    max-width:720px;
+
+    margin:0 auto 45px;
+}
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+}
+
+.contact-card{
+    display:flex;
+
+    min-height:150px;
+
+    flex-direction:column;
+    justify-content:center;
+    gap:10px;
+
+    padding:28px;
+
+    overflow-wrap:anywhere;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    color:#e8e8e8;
+
+    transition:.3s;
+}
+
+.contact-card span{
+    color:var(--accent);
+
+    font-family:'JetBrains Mono', monospace;
+
+    font-size:.9rem;
+}
+
+.contact-card:hover{
+    border-color:var(--accent);
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 0 24px rgba(0,255,136,.14);
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer{
+
+    padding:100px 30px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer h3{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+}
+
+footer p{
+
+    color:var(--accent);
+
+    font-family:'JetBrains Mono', monospace;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+.chapter,
+.mindset-card,
+.contact-card{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.chapter.visible,
+.mindset-card.visible,
+.contact-card.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* =====================================
+   SELECTION
+===================================== */
+
+::selection{
+    background:var(--accent);
+    color:#000;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:20px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .chapter{
+        padding:90px 10px;
+    }
+
+    .chapter h2{
+        font-size:2.3rem;
+    }
+
+    .section-intro h2{
+        font-size:2.4rem;
+    }
+
+    #mindset h2{
+        font-size:2.4rem;
+    }
+
+    footer h3{
+        font-size:1.5rem;
+    }
+
+    .featured::before{
+        display:none;
+    }
+}
+
+/* =====================================
+   HERO BACKGROUND GLOW
+===================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:-200px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:800px;
+    height:800px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,255,136,.08),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+}
