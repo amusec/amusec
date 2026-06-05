@@ -26,4 +26,5 @@ The core idea is simple:
 
 - Email: vivek12345ara@gmail.com
 - LinkedIn: https://www.linkedin.com/in/tiwari-vivek-kumar/
-- GitHub: https://github.com/vivek12345ara
+- GitHub: https://github.com/amusec
+- Website: https://amusec.github.io/
